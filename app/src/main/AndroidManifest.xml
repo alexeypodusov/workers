@@ -3,6 +3,7 @@
     package="ru.alexey_podusov.workers">
 
     <application
+        android:name=".WorkersApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
