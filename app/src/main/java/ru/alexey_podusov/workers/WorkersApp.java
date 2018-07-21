@@ -15,9 +15,6 @@ public class WorkersApp extends Application {
         sAppComponent = DaggerAppComponent.builder()
                 .appModule(new AppModule(this))
                 .build();
-        sAppComponent = .builder()
-                .appModule(new AppModule(this))
-                .build();
     }
 
     public static AppComponent getAppComponent() {

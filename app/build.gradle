@@ -16,6 +16,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
 }
 
 dependencies {
@@ -43,6 +47,11 @@ dependencies {
     implementation 'com.yahoo.squidb:squidb-annotations:3.2.3'
     implementation 'com.yahoo.squidb:squidb-android:3.2.3'
     annotationProcessor 'com.yahoo.squidb:squidb-processor:3.2.3'
+
+    annotationProcessor "org.androidannotations:androidannotations:4.4.0"
+    implementation "org.androidannotations:androidannotations-api:4.4.0"
+
+    implementation 'com.annimon:stream:1.2.0'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
