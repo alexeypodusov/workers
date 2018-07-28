@@ -65,7 +65,7 @@ public class WorkerFragment extends MvpAppCompatFragment implements WorkerView {
     @AfterViews
     public void onBindedViews() {
         ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(getContext().getString(R.string.specialties_text));
-        ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         mWorkerPresenter.onBindedViews(getArguments().getLong(KEY_WORKER_ID));
     }
 
