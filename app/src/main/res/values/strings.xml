@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Workers</string>
+    <string name="age_with_colon_text">Возраст:</string>
+    <string name="age_text">Возраст</string>
+    <string name="first_name_text">Имя</string>
+    <string name="last_name_text">Фамилия</string>
+    <string name="birthday_text">Дата рождения</string>
+    <string name="specialties_text">Специальности</string>
+    <string name="workers_text">Сотрудники</string>
 </resources>
