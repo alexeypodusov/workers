@@ -14,6 +14,9 @@ import ru.alexey_podusov.workers.models.WorkersAndSpecialtiesInteractor;
 import ru.alexey_podusov.workers.models.db.DatabaseDao;
 import ru.alexey_podusov.workers.models.db.DatabaseRepository;
 import ru.alexey_podusov.workers.models.WorkersApi;
+import ru.alexey_podusov.workers.presenters.SpecialtyListPresenter;
+import ru.alexey_podusov.workers.presenters.WorkerListPresenter;
+import ru.alexey_podusov.workers.presenters.WorkerPresenter;
 
 @Module
 public class AppModule {
@@ -52,5 +55,20 @@ public class AppModule {
     @Singleton
     public DatabaseDao provideDatabaseDao(Context context) {
         return new DatabaseDao(context);
+    }
+
+    @Provides
+    public SpecialtyListPresenter provideSpecialtyListPresenter(WorkersAndSpecialtiesInteractor workersAndSpecialtiesInteractor) {
+        return new SpecialtyListPresenter(workersAndSpecialtiesInteractor);
+    }
+
+    @Provides
+    public WorkerListPresenter provideWorkerListPresenter(WorkersAndSpecialtiesInteractor workersAndSpecialtiesInteractor) {
+        return new WorkerListPresenter(workersAndSpecialtiesInteractor);
+    }
+
+    @Provides
+    public WorkerPresenter provideWorkerPresenter(WorkersAndSpecialtiesInteractor workersAndSpecialtiesInteractor) {
+        return new WorkerPresenter(workersAndSpecialtiesInteractor);
     }
 }

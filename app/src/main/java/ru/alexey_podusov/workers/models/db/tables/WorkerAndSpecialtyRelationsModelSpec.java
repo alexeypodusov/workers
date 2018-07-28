@@ -4,7 +4,7 @@ import com.yahoo.squidb.annotations.ColumnSpec;
 import com.yahoo.squidb.annotations.PrimaryKey;
 import com.yahoo.squidb.annotations.TableModelSpec;
 
-@TableModelSpec(className = "WorkerAndSpecialtyRelations", tableName = "worker_and_specialty_relations")
+@TableModelSpec(className = "WorkerAndSpecialtyRelation", tableName = "worker_and_specialty_relations")
 public class WorkerAndSpecialtyRelationsModelSpec {
     @PrimaryKey
     @ColumnSpec(name = "_id")

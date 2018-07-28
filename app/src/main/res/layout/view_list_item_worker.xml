@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="64dp"
+    android:layout_marginLeft="16dp"
+    android:gravity="center_vertical"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/worker_name_text_view"
+        style="@style/PrimaryTextViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tool:text="Иван Петров" />
+
+    <TextView
+        android:id="@+id/age_text_view"
+        style="@style/SecondaryTextViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tool:text="Возраст: 25" />
+</LinearLayout>

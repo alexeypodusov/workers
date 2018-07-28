@@ -1,19 +1,14 @@
 package ru.alexey_podusov.workers.utils;
 
-import org.androidannotations.annotations.EFragment;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Calendar;
 import java.util.Date;
-import java.util.List;
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class ResponseUtils {
-    private static String FIRST_YEAR_FORMAT_REGEX = "\\d{4}-\\d{2}-\\d{2}";
-    private static String LAST_YEAR_FORMAT_REGEX = "\\d{2}-\\d{2}-\\d{4}";
+    private final static String FIRST_YEAR_FORMAT_REGEX = "\\d{4}-\\d{2}-\\d{2}";
+    private final static String LAST_YEAR_FORMAT_REGEX = "\\d{2}-\\d{2}-\\d{4}";
 
 
     /**
@@ -53,4 +48,29 @@ public class ResponseUtils {
         }
     }
 
+    /**
+     * @param stringDate в виде "dd.MM.yyyy"
+     * @return возраст, если stringDate другого формата, то вернет "-"
+     */
+    public static String getAgeByStringDate(String stringDate) {
+        Date birthdate = null;
+        try {
+            birthdate = new SimpleDateFormat("dd.MM.yyyy").parse(stringDate);
+        } catch (ParseException e) {
+            return "-";
+        }
+
+        Calendar birthdateCalendar = Calendar.getInstance();
+        birthdateCalendar.setTime(birthdate);
+        birthdateCalendar.add(Calendar.DAY_OF_MONTH, -1);
+
+        Calendar currentDateCalendar = Calendar.getInstance();
+
+        int age = currentDateCalendar.get(Calendar.YEAR) - birthdateCalendar.get(Calendar.YEAR);
+        if (currentDateCalendar.get(Calendar.DAY_OF_YEAR) <= birthdateCalendar.get(Calendar.DAY_OF_YEAR)) {
+            age--;
+        }
+
+        return String.valueOf(age);
+    }
 }

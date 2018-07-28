@@ -8,9 +8,9 @@ import com.yahoo.squidb.data.ISQLiteOpenHelper;
 import com.yahoo.squidb.data.SquidDatabase;
 import com.yahoo.squidb.sql.Table;
 
-import ru.alexey_podusov.workers.models.db.tables.Specialty;
-import ru.alexey_podusov.workers.models.db.tables.Worker;
-import ru.alexey_podusov.workers.models.db.tables.WorkerAndSpecialtyRelations;
+import ru.alexey_podusov.workers.models.db.tables.WorkerAndSpecialtyRelation;
+import ru.alexey_podusov.workers.views.Specialty;
+import ru.alexey_podusov.workers.views.Worker;
 
 import static ru.alexey_podusov.workers.Const.DATABASE_NAME;
 
@@ -34,10 +34,10 @@ public class DatabaseDao extends SquidDatabase {
 
     @Override
     protected Table[] getTables() {
-        return new Table[] {
+        return new Table[]{
                 Specialty.TABLE,
                 Worker.TABLE,
-                WorkerAndSpecialtyRelations.TABLE
+                WorkerAndSpecialtyRelation.TABLE
         };
     }
 
